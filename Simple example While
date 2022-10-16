@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PruebasCondicionales
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("¿Deseas entrar en el bucle while?");
+            string respuesta = Console.ReadLine();
+
+            while(respuesta != "no")
+            {
+                Console.WriteLine("estás ejecutando el bloque de codigo while");
+                Console.WriteLine("Introduce nombre");
+                
+                string nombre=Console.ReadLine();
+                Console.WriteLine($"Saldrás del bucle {nombre} cuando responas no");
+
+                Console.WriteLine("¿Deseas repetir otra vez?");
+                respuesta = Console.ReadLine();
+
+            }
+
+            Console.WriteLine("Has salido del bucle");
+
+        }
+    }
+}
