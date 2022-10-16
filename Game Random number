@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PruebasCondicionales
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Random numero = new Random();
+            int numRandom = numero.Next(0, 100);
+
+            int intentos = 0;
+            int num = 101;
+
+            Console.WriteLine("Introduce un número entre 0 y 100");
+            
+            while (numRandom != num)
+            {
+                intentos++;
+                num = Convert.ToInt32(Console.ReadLine());
+
+                if (num > numRandom) Console.WriteLine("El número es menor");
+                if (num < numRandom) Console.WriteLine("El número es mayor");
+                
+            } 
+
+            Console.WriteLine($"Has acertado, el número correcto es {numRandom}, y has usado {intentos} intentos");
+        }
+    }
+}
