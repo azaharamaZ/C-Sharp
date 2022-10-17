@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PruebasCondicionales
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Random numero = new Random();
+            int numRandom = numero.Next(0, 100);
+
+            int intentos = 0;
+            int num;
+
+            Console.WriteLine("Introduce un número entre 0 y 100");
+
+            do
+            {
+                intentos++;
+
+                try
+                {
+                    num = int.Parse(Console.ReadLine());
+
+                } catch (Exception ex) //Trata las excepciones de forma generica, es una clase
+                {
+                    Console.WriteLine("No has intruducido un valor numerico válido. Tomamos el 0");
+                    Console.WriteLine(ex.Message); //Muestra un mensaje por consola que muestra el error q dispara la excepcion
+                    num=0;
+                }
+                
+
+                if (num > numRandom) Console.WriteLine("El número es menor");
+                if (num < numRandom) Console.WriteLine("El número es mayor");
+
+            } while (numRandom != num);
+
+
+                Console.WriteLine("Has acertado, has usado " +  intentos + " intentos");
+
+            Console.WriteLine("A partir de esta línea de código el programa continuaría.");
+
+        }
+    }
+}
