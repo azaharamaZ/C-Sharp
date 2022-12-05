@@ -1,0 +1,29 @@
+Average es un método que calcula el promedio de una secuencia de valores.
+
+using System;
+using System.Linq;
+
+namespace Excercise01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int [] array = new int[4];
+            int suma=0;
+
+            for(int i=0; i < 4; i++)
+            {
+                Console.WriteLine("Debes introducir 4 números. Has ingresado {0} numéro/s ", i+1);
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Llamamos  average cuya var de almacenamiento siempre será de tipo double
+            // para usar int deberemos convertir
+
+            int promedio = Convert.ToInt32(array.Average());
+            Console.WriteLine("El promedio es {0}: ", promedio);
+
+        }
+    }
+}
