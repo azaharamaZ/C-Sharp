@@ -1,0 +1,42 @@
+// En esta ocasión usaremos el método reverse 
+// junto con los métodos GetLowerBound() y GetUpperBound()
+
+using System;
+using System.Linq;
+
+namespace Excercise01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[4];
+            int suma = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Debes introducir 4 números. Has ingresado {0} numéro/s ", i + 1);
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // 2º
+            // Llamamos a la funcion que invierte el array
+
+            Array.Reverse(array);
+            PrintInverse(array);
+        }    
+            // 1º 
+            // Reverse invierte el orden del array
+            // para usar este método deberemos crear una funcion
+            // la cual almacena el orden inverso del array y lo mostrará por consola.
+
+            public static void PrintInverse (Array array)
+            {
+                for (int i = array.GetLowerBound(0); i <= array.GetUpperBound(0); i++)
+                {
+                    Console.WriteLine("El array en orden inverso, teniendo en cuenta que empezamos desde 0 es: {0} {1}", i, array.GetValue(i));
+                }
+
+            }
+    }
+}
